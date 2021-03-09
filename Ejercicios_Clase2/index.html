@@ -7,10 +7,10 @@
   <title>Document</title>
 </head>
 <body>
-<form action=”action.php" method=”POST">
-  Name: <input type="text" name="username" />
-  Email: <input type="text" name="email" />
-  <input type="submit" name="submit" value="Submit me!" />
+<form enctype="multipart/form-data" action=”action.php" method="POST">
+  <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+  <input name="userfile" type="file" />
+  <input type="submit" value="Upload File!" />
 </form>
 <img src="https://www.elsoldemexico.com.mx/doble-via/d2sw9p-memes-de-cheems-5.jpg/alternates/FREE_720/memes%20de%20cheems%20(5).jpg">
 </body>
