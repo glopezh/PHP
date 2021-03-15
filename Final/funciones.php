@@ -1,7 +1,8 @@
 <?php
 
 function validaUsuarios($correo,$clave){
-    $usuarios=  datosUsuarios();
+    //$usuarios=  datosUsuarios();
+    $usuarios_="datos.txt"
     $login=0;
     $usuarioSeleccionado=array();
     foreach ($usuarios as $value) {
