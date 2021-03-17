@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Abre el fichero para obtener el contenido existente
         $actual = file_get_contents($fichero);
 // Añade una nueva persona al fichero
-        $actual .= "$task\n";
+        $actual .= $task.PHP_EOL;
 // Escribe el contenido al fichero
         file_put_contents($fichero, $actual);
         //fclose($fp);
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         //echo $task.PHP_EOL;
     }
     echo file_get_contents('task.txt').PHP_EOL;
-   // echo $output.PHP_EOL;
+    echo $output.PHP_EOL;
 } else {
     $form_html = <<<HTML
     <form action="add_task.php" method="POST">
