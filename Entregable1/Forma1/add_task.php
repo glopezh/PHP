@@ -19,9 +19,18 @@ echo $output;
     <form action="add_task.php" method="POST">
      <fieldset>
     <h1>List of tasks</h1>
+
+    <ol id="todo-list" class="todo-list">
+      <li class="todo todo-completed" data-todo-id="123">
         <input type="checkbox" checked>
         <input class="todo-text" type="text" readonly value="Avanzar entregable 1">
+      </li>
+      <li class="todo" data-todo-id="456">
+        <input type="checkbox">
         <input class="todo-text" type="text" readonly value="Avanzar entregable 2">
+      </li>
+    </ol>
+
     <div class="new-todo">
       <input id="new-todo-input" class="todo-text-edit" type="text" value="">
     </div>
