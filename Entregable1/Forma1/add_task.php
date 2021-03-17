@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $task_new = $task;
         file_put_contents('task.txt',"$task_new");
         $output .= $task . "<br>";
-        echo file_get_contents('task.txt',$task_new);
+        echo file_get_contents('task.txt',"$task_new");
     }
     echo $output;
     echo file_get_contents(Forma1/'task.txt');
