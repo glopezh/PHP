@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $task = filter_var($_POST['task'], FILTER_SANITIZE_STRING);
         $show_task = file_put_contents('task.txt',$task);
         $fp = fopen('task.txt', 'w');
-        fwrite($fp, $task;
+        fwrite($fp, $task);
         fwrite($fp, $task);
         fclose($fp);
         $output .= $task . "<br>";
