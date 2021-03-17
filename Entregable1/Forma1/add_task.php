@@ -13,10 +13,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         print_r("");
         file_put_contents('demo.txt',$task);
         $output .= $task . "<br>";
+        echo file_get_contents(Forma1/'task.txt',$task);
     }
-
     echo $output;
-    echo file_put_contents(Forma1/'task.txt',$task);
+    echo file_get_contents(Forma1/'task.txt',$task);
 } else {
     $form_html = <<<HTML
     <form action="add_task.php" method="POST">
