@@ -8,7 +8,7 @@ ini_set("error_tasks", true);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $output = "";
-    if (!empty($_POST['homework'])) {
+    if (!empty($_POST['task'])) {
         $task = filter_var($_POST['task'], FILTER_SANITIZE_STRING);
         $task =[]
         $output .= "Your task is " . $task . "<br>";
