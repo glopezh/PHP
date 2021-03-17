@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $output = "";
     if (!empty($_POST['task'])) {
         $task = filter_var($_POST['task'], FILTER_SANITIZE_STRING);
-        $show_task = file_put_contents('task.txt',"$task");
+        $show_task = file_put_contents('task.txt',$task);
         $output .= $task . "<br>";
         echo $show_task;
     }
