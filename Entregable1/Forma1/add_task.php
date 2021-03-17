@@ -42,5 +42,3 @@ echo $output;
 HTML;
     echo $form_html;
 }
-
-*/
