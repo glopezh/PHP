@@ -10,6 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $output = "";
     if (!empty($_POST['homework'])) {
         $task = filter_var($_POST['task'], FILTER_SANITIZE_STRING);
+        $task =[]
         $output .= "Your task is " . $task . "<br>";
 
     }
@@ -19,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $form_html = <<<HTML
     <form action="add_task.php" method="POST">
 	    <fieldset>
-		    <label for="homework">Task</label>
+		    <label for="task">Task</label>
 		    <input type="checkbox" id="task" name="task" class="form-text" />
 	    </fieldset>
 	    
