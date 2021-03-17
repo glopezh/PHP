@@ -10,8 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $output = "";
     if (!empty($_POST['task'])) {
         $task = filter_var($_POST['task'], FILTER_SANITIZE_STRING);
-
-
         }
         $output .= "Your task is " . $task . "<br>";
 
@@ -34,3 +32,4 @@ HTML;
     echo $form_html;
 }
 
+*/
