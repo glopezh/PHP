@@ -10,9 +10,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $output = "";
     if (!empty($_POST['task'])) {
         $task = filter_var($_POST['task'], FILTER_SANITIZE_STRING);
-        file_put_contents('task.txt',$task);
+        $task_new = $task;
+        file_put_contents('task.txt',$task_new);
         $output .= $task . "<br>";
-        echo file_get_contents('task.txt',$task);
+        echo file_get_contents('task.txt',$task_new);
     }
     echo $output;
     echo file_get_contents(Forma1/'task.txt');
