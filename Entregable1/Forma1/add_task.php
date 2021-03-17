@@ -32,7 +32,7 @@ echo $output;
     </ol>
 
     <div class="new-todo">
-      <input id="task" class="todo-text-edit" type="text" value="">
+      <input name ="task" class="todo-text-edit" type="text" value="">
     </div>
 	    <fieldset class="form-actions">
 		    <input type="submit" value="Send!" />
