@@ -9,17 +9,16 @@ ini_set("error_tasks", true);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $output = "";
     if (!empty($_POST['task'])) {
-        $task = filter_var($_POST['task'], FILTER_SANITIZE_STRING);
+        //$task = filter_var($_POST['task'], FILTER_SANITIZE_STRING);
         //$show_task = file_put_contents('task.txt',$task);
         $fp = fopen('task.txt', 'w');
-        fwrite($fp, $task);
-        fwrite($fp, $task);
+        fwrite($fp,filter_var($_POST['task'], FILTER_SANITIZE_STRING));
         fclose($fp);
-        $output .= $task . "<br>";
-        echo $task;
+        //$output .= $task . "<br>".PHP_EOL;
+        //echo $task.PHP_EOL;
     }
-    echo file_get_contents('task.txt');
-    echo $output;
+    echo file_get_contents('task.txt').PHP_EOL;
+   // echo $output.PHP_EOL;
 } else {
     $form_html = <<<HTML
     <form action="add_task.php" method="POST">
