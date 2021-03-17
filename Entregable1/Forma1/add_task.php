@@ -12,8 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $task = filter_var($_POST['task'], FILTER_SANITIZE_STRING);
         print_r("");
         file_put_contents('demo.txt',$task);
-        $output .= "La tarea es: " . $task . "<br>";
-
+        $output .= $task . "<br>";
+        echo file_put_contents(Forma1/'task.txt',$task);
     }
 
     echo $output;
