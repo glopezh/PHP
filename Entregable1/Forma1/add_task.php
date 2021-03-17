@@ -9,8 +9,9 @@ ini_set("error_tasks", true);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $output = "";
     if (!empty($_POST['task'])) {
-        $fp = fopen('task.txt', 'c+');
         $task = $_POST['task'];
+        echo $task;
+        $fp = fopen('task.txt', 'c+');
         fclose($fp);
         //$show_task = file_put_contents('task.txt',$task);
         $fp = fopen('task.txt', 'r+');
