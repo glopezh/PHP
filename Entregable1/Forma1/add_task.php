@@ -10,13 +10,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $output = "";
     if (!empty($_POST['task'])) {
         $task = $_POST['task'];
-        echo $task;
         $fp = fopen('task.txt', 'c+');
-        fclose($fp);
         //$show_task = file_put_contents('task.txt',$task);
-        $fp = fopen('task.txt', 'r+');
         $fp =fopen("task.txt","w");
         fwrite($fp,$task);
+        fclose($fp);
         //$output.= $task.PHP_EOL;
 // Escribe el contenido al fichero
         //file_put_contents($fichero, $actual);
