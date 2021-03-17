@@ -19,8 +19,8 @@ echo $output;
     <form action="add_task.php" method="POST">
 	    <fieldset>
 		    <label for="Ingrese la tarea">Task</label>
-		    <input class="todo-text" type="text" readonly value="Estudiar el curso de PHP">
-		    <input class="todo-text" type="text" readonly value="Avanzar tarea de Entornos Web">
+		    <input class="todo-text" type="checkbox" readonly value="Estudiar el curso de PHP">
+		    <input class="todo-text" type="checkbox" readonly value="Avanzar tarea de Entornos Web">
 		    <input type="checkbox" id="task" name="task" class="form-text" />
 		    <input id="new-task-input" type="text" class="form-text" type="text" value="">
 	    </fieldset>
