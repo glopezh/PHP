@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $output = "";
     if (!empty($_POST['task'])) {
         $task = filter_var($_POST['task'], FILTER_SANITIZE_STRING);
-        return $task;
+        echo $task;
     }
 
 echo $output;
