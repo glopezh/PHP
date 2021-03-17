@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo $output;
 } else {
     $form_html = <<<HTML
-    <form action="Formulario_basico.php" method="POST">
+    <form action="add_task.php" method="POST">
 	    <fieldset>
 		    <label for="homework">Name</label>
 		    <input type="text" id="homework" name="homework" class="form-text" />
