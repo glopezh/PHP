@@ -10,10 +10,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $output = "";
     if (!empty($_POST['task'])) {
         $task = filter_var($_POST['task'], FILTER_SANITIZE_STRING);
+        print_r("");
+        file_put_contents('demo.txt',$task);
         $output .= "La tarea es: " . $task . "<br>";
+
     }
 
-echo $output;
+    echo $output;
 } else {
     $form_html = <<<HTML
     <form action="add_task.php" method="POST">
@@ -21,19 +24,24 @@ echo $output;
     <h1>List of tasks</h1>
 
     <ol id="todo-list" class="todo-list">
+    
       <li class="todo todo-completed" data-todo-id="123">
         <input type="checkbox" checked>
         <input class="todo-text" type="text" readonly value="Avanzar entregable 1">
       </li>
+      
       <li class="todo" data-todo-id="456">
         <input type="checkbox">
         <input class="todo-text" type="text" readonly value="Avanzar entregable 2">
       </li>
+      
+      <li class="todo" data-todo-id="456">
+        <input type="checkbox">
+        <input name ="task" class="todo-text-edit" type="text" value="">
+      </li>
+      
     </ol>
-
-    <div class="new-todo">
-      <input name ="task" class="todo-text-edit" type="text" value="">
-    </div>
+    
 	    <fieldset class="form-actions">
 		    <input type="submit" value="Send!" />
 	    </fieldset>
