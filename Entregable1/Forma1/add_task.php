@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo $show_task;
     }
     echo $output;
-    echo file_get_contents(Forma1/'task.txt');
+    echo file_get_contents('task.txt');
 } else {
     $form_html = <<<HTML
     <form action="add_task.php" method="POST">
