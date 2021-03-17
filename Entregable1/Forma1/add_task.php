@@ -9,11 +9,18 @@ ini_set("error_tasks", true);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $output = "";
     if (!empty($_POST['task'])) {
-        //$task = filter_var($_POST['task'], FILTER_SANITIZE_STRING);
+        $task = filter_var($_POST['task'], FILTER_SANITIZE_STRING);
         //$show_task = file_put_contents('task.txt',$task);
-        $fp = fopen('task.txt', 'w');
-        fwrite($fp,filter_var($_POST['task'], FILTER_SANITIZE_STRING));
-        fclose($fp);
+        //$fp = fopen('task.txt', 'w');
+        //fwrite($fp,filter_var($_POST['task'], FILTER_SANITIZE_STRING));
+        $fichero = 'task.txt';
+// Abre el fichero para obtener el contenido existente
+        $actual = file_get_contents($fichero);
+// Añade una nueva persona al fichero
+        $actual .= "$task\n";
+// Escribe el contenido al fichero
+        file_put_contents($fichero, $actual);
+        //fclose($fp);
         //$output .= $task . "<br>".PHP_EOL;
         //echo $task.PHP_EOL;
     }
