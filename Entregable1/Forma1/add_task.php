@@ -17,14 +17,23 @@ echo $output;
 } else {
     $form_html = <<<HTML
     <form action="add_task.php" method="POST">
-	    <fieldset>
-		    <label for="Ingrese la tarea">Task</label>
-		    <input class="todo-text" type="checkbox" readonly value="Estudiar el curso de PHP">
-		    <input class="todo-text" type="checkbox" readonly value="Avanzar tarea de Entornos Web">
-		    <input type="checkbox" id="task" name="task" class="form-text" />
-		    <input id="new-task-input" type="text" class="form-text" type="text" value="">
-	    </fieldset>
-	    
+     <fieldset>
+    <h1>TODO list</h1>
+
+    <ol id="todo-list" class="todo-list">
+      <li class="todo todo-completed" data-todo-id="123">
+        <input type="checkbox" checked>
+        <input class="todo-text" type="text" readonly value="Avanzar entregable 1">
+      </li>
+      <li class="todo" data-todo-id="456">
+        <input type="checkbox">
+        <input class="todo-text" type="text" readonly value="Avanzar entregable 2">
+      </li>
+    </ol>
+
+    <div class="new-todo">
+      <input id="new-todo-input" class="todo-text-edit" type="text" value="">
+    </div>
 	    <fieldset class="form-actions">
 		    <input type="submit" value="Send!" />
 	    </fieldset>
