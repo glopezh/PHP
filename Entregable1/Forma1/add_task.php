@@ -10,16 +10,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $output = "";
     if (!empty($_POST['task'])) {
         $task = filter_var($_POST['task'], FILTER_SANITIZE_STRING);
-        $show_task = file_put_contents('task.txt',$task);
+        //$show_task = file_put_contents('task.txt',$task);
         $fp = fopen('task.txt', 'w');
         fwrite($fp, $task);
         fwrite($fp, $task);
         fclose($fp);
         $output .= $task . "<br>";
-        echo $show_task;
+        echo $task;
     }
-    echo $output;
     echo file_get_contents('task.txt');
+    echo $output;
 } else {
     $form_html = <<<HTML
     <form action="add_task.php" method="POST">
