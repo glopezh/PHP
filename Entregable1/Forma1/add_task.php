@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $output = "";
     if (!empty($_POST['task'])) {
         $fp = fopen('task.txt', 'c+');
-        $task = filter_var($_POST['task'], FILTER_SANITIZE_STRING);
+        $task = $_POST['task'];
         fclose($fp);
         //$show_task = file_put_contents('task.txt',$task);
         $fp = fopen('task.txt', 'r+');
