@@ -10,12 +10,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $output = "";
     if (!empty($_POST['task'])) {
         $task = filter_var($_POST['task'], FILTER_SANITIZE_STRING);
+        $filename ='task.txt';
+        file_put_contents ( $filename , $task);
         }
-        $output .= "Your task is " . $task . "<br>";
-
+        $output .= file_get_contents($filename,true). "<br>";
     }
 
-    echo $output;
+
+$fichero = 'gente.txt';
+// Abre el fichero para obtener el contenido existente
+$actual = file_get_contents($fichero);
+// Añade una nueva persona al fichero
+$actual .= "John Smith\n";
+// Escribe el contenido al fichero
+file_put_contents($fichero, $actual);
+
+
+echo $output;
 } else {
     $form_html = <<<HTML
     <form action="add_task.php" method="POST">
