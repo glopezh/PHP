@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!empty($_POST['task'])) {
         $task = filter_var($_POST['task'], FILTER_SANITIZE_STRING);
         $task_new = $task;
-        file_put_contents('task.txt',$task_new);
+        file_put_contents('task.txt',"$task_new");
         $output .= $task . "<br>";
         echo file_get_contents('task.txt',$task_new);
     }
