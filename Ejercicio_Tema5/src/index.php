@@ -3,7 +3,7 @@ error_reporting(-1);
 ini_set("display_errors", "true");
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '../../vendor/autoload.php';
 $log = new Logger('name');
 $log->pushHandler(new StreamHandler('your.log', Logger::WARNING));
 // add record to the log
