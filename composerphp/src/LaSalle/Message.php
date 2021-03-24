@@ -5,7 +5,7 @@ class Message
 {
     static public function send()
 
-{
-    echo 'Hello world';
-}
+    {
+        echo 'Hello world';
+    }
 }
