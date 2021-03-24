@@ -2,7 +2,9 @@
 
 <?php
 
-/* Archivo que al ejecutarse por linea de comandos nos permita eliminar una tarea pendiente de la lista
-guardada en el fichero. Este script recibe como parámetro una cadena de texto con la tarea a eliminar*/
+/* Al ejecutarse por línea de comandos nos muestre las tareas pendientes de hacer que tenemos guardadas en disco.*/
 
-echo file_get_contents('task.txt');
+$file_task= "control_task.txt";
+$display_task= file_get_contents($file_task);
+echo $display_task.PHP_EOL;
+
