@@ -5,6 +5,10 @@
         "monolog/monolog": "^2.2",
         "twig/twig": "1.*"
     },
+    "autoload": {
+        "psr-4": {
+            "LaSalle\\": "src/LaSalle"
+        },
     "license": "1.0.0",
     "authors": [
         {

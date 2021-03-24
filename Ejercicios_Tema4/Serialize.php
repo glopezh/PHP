@@ -1,5 +1,5 @@
 <?php
-// $datos_sesion contiene un array multi-dimensional con
+/*// $datos_sesion contiene un array multi-dimensional con
 // información del usuario actual. Usamos serialize() para
 // almacenarla en una base de datos al final de la petición.
 
@@ -36,4 +36,4 @@ if (!odbc_execute($sent, &$datos_sql)) {
         /* Algo ha fallado.. */
     }
 }
-?>
+*/?>
