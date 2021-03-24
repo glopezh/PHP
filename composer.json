@@ -1,15 +1,17 @@
 {
     "name": "geraldinelopez/php",
+    "description": "Prueba Hola Mundo",
     "type": "project",
     "require": {
         "monolog/monolog": "^2.2",
-        "twig/twig": "1.*"
+        "twig/twig": "^3.3"
     },
     "autoload": {
-        "psr-4": {
-            "LaSalle\\": "src/LaSalle"
-        },
-    "license": "1.0.0",
+    "psr-4": {
+        "LaSalle\\": "src/LaSalle"
+    },
+
+    "license": "1.0",
     "authors": [
         {
             "name": "Geraldine Lopez",
