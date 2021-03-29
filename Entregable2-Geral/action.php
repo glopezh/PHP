@@ -4,13 +4,21 @@ ini_set("display_errors", true);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $output = "";
+    $recordar = FALSE;
     if (!empty($_POST['username'])) {
         $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
-        $output .= "Se ingreso correctamente el username " .PHP_EOL. $username.PHP_EOL;
+        $output .= "Se ingreso correctamente el username " . $username.PHP_EOL;
+
     }
     if (!empty($_POST['password'])) {
         $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
-        $output .= "Se ingreso correctamente el password " .PHP_EOL. $password.PHP_EOL;
+        $output .= "Se ingreso correctamente el password " . $password.PHP_EOL;
+
+    }
+    if (isset($_POST['remember'])) {
+        $recordar = true;
+        setcookie("name", $username, time()+3600); /* expire in 1 hour */
+        setcookie("password", $password, time()+3600); /* expire in 1 hour */
     }
 echo $output.PHP_EOL;
 } else {
@@ -29,7 +37,7 @@ echo $output.PHP_EOL;
     <!-- Se le debe de agregar una cookie para que guarde los datos de sesión -->
     
     <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
+      <input id ="remember" type="checkbox" checked="checked" name="remember"> Remember me
     </label>
     
   </div>
