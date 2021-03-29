@@ -6,13 +6,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $output = "";
     if (!empty($_POST['username'])) {
         $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
-        $output .= "Se ingreso correctamente el username" . $username.PHP_EOL;
+        $output .= "Se ingreso correctamente el username" .PHP_EOL. $username;
     }
     if (!empty($_POST['password'])) {
         $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
-        $output .= "Se ingreso correctamente el password" . $password.PHP_EOL;
+        $output .= "Se ingreso correctamente el password" .PHP_EOL. $password;
     }
-echo $output;
+echo $output.PHP_EOL;
 } else {
     $form_html = <<<HTML
 <form action="action.php" method="post">
