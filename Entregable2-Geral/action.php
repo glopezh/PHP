@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
         $output .= "Se ingreso correctamente el password" . $password;
     }
-
+echo $output;
 } else {
     $form_html = <<<HTML
 <form action="action.php" method="post">
